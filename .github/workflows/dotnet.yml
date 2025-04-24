@@ -25,4 +25,7 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Test
+      env:
+        MadridEmt:ClientId :  ${{ secrets.CLIENT_ID }}
+        MadridEmt:PassKey : ${{ secrets.PASSKEY }}
       run: dotnet test --no-build --verbosity normal
